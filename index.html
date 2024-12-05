@@ -9,10 +9,433 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.min.css"
+    />
     <title>Happy Birtday!</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .grid {
+        margin: 0 auto;
+        max-width: 1980px;
+        display: flex;
+      }
+      .grid-item {
+        width: calc(
+          33.33% - 10px
+        ); /* Set item width to 1/3 of the container with gap */
+        margin-bottom: 15px;
+        background-color: #f3f3f3;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .grid-item {
+          width: calc(50% - 10px); /* 2 columns on smaller screens */
+        }
+      }
+      @media (max-width: 480px) {
+        .grid-item {
+          width: 100%; /* Single column on very small screens */
+        }
+      }
+    </style>
   </head>
-  <body>
-    
+  <body class="font-nunito">
+    <!-- into section -->
+    <div
+      class="relative overflow-hidden h-1/2 lg:h-screen bg-gradient-to-t from-pink-200 dark:from-slate-800 dark:to-slate-900"
+    >
+      <!-- navbar -->
+      <nav class="fixed top-0 z-10 w-full bg-white dark:bg-slate-900">
+        <div class="container flex items-center justify-between py-5 mx-auto">
+          <div class="flex items-center gap-2">
+            <img class="w-8" src="./img/logo.png" alt="" />
+            <span class="text-2xl font-bold text-pink-300 dark:text-white"
+              >Rafhaela Natalie</span
+            >
+          </div>
+          <ul
+            class="hidden space-x-10 text-sm font-bold text-gray-600 uppercase md:flex dark:text-gray-100"
+          >
+            <li class="hover:text-gray-500">
+              <a href="#">home</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#gwa">dari gwa</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#greetings">greetings</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#gallery">gallery</a>
+            </li>
+          </ul>
+          <img
+            id="moon"
+            src="./img/moon.png"
+            class="hidden w-5 cursor-pointer md:block"
+            alt=""
+          />
+          <div id="hamburger" class="z-20 space-y-1 cursor-pointer md:hidden">
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+          </div>
+          <ul
+            id="menu"
+            class="absolute top-0 left-0 hidden w-full p-10 space-y-10 text-center text-white bg-indigo-900 rounded-b-3xl"
+          >
+            <li>
+              <a id="hLink" href="#">homepage</a>
+            </li>
+            <li>
+              <a id="hLink" href="#gwa">dari gwa</a>
+            </li>
+            <li>
+              <a id="hLink" href="#greetings">greetings</a>
+            </li>
+            <li>
+              <a id="hLink" href="#gallery">gallery</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- intro content -->
+      <!-- image -->
+      <!-- circle -->
+      <div
+        class="absolute left-0 right-0 hidden mx-auto bg-indigo-900 rounded-full lg:block -bottom-1/4 w-big h-big -z-10"
+      ></div>
+      <!-- animated text -->
+      <div
+        class="absolute text-xl font-bold top-1/3 left-5 sm:left-10 sm:text-4xl md:left-1/4 md:text-6xl lg:left-5 xl:left-48 xl:text-7xl"
+      >
+        <span class="text-gray-600">Happy Birtday</span>
+        <p id="text" class="text-pink-300"></p>
+      </div>
+      <!-- texts -->
+      <div
+        class="absolute top-0 bottom-0 flex-col hidden w-1/3 gap-5 p-6 m-auto bg-white rounded-md shadow-lg lg:flex right-10 dark:bg-slate-900 dark:shadow-slate-800 h-fit"
+      >
+        <h1 class="text-4xl font-bold text-pink-300">Halo, Sayanggg</h1>
+        <p class="text-gray-400">
+          Asik nih ada yang udah 17 tahunn, ini aku ada hadiah kecil kecilan
+          semoga hadiah ini bisa berkesan ya sayanggg. Oh iya, ini juga ada
+          temen temen mu yang ngucapin lhooo
+        </p>
+        <a
+          class="px-3 py-2 text-xl font-semibold text-white bg-pink-300 rounded-md w-fit"
+          href="#greetings"
+          >Ucapan dari temenmuuu</a
+        >
+      </div>
+    </div>
+    <!-- about -->
+    <div id="gwa" class="px-10 dark:bg-slate-900">
+      <div
+        class="container flex flex-col-reverse items-center gap-20 py-40 mx-auto lg:flex-row"
+      >
+        <!-- left -->
+        <div class="relative">
+          <img
+            class="absolute top-0 left-0 h-1/4 -z-10"
+            src="./img/dots.png"
+            alt=""
+          />
+          <div class="h-full overflow-hidden rounded-full">
+            <img width="400px" src="./img/portrait.jpg" alt="" />
+          </div>
+        </div>
+        <!-- right -->
+        <div class="flex flex-col gap-3 my-auto">
+          <h1 class="font-bold text-pink-300">Ucapan dari pacarmu</h1>
+          <p class="text-gray-400">
+            Halo sayangkuuu, selamat ulang tahun ke 17 yaaaa. Akhirnya sudah
+            nggak jadi bokem lagi. <br />
+            Semoga panjang umur, sehat selalu, menjadi tambah dewasa, dan selalu
+            bahagia. <br />
+            Terimakasih sayang, sudah nemenin aku selama 1 tahun ini,
+            terimakasih sudah mau menjadi bagian dari cerita hidupku. <br />
+            Aku sampe sekarang masih ga nyangka, kalo kita bisa sejauh ini,
+            semoga kita bisa terus bareng ya sayang baik sedi maupun susahhhh.
+            <br />
+            Semoga pacarku ini kedepannya menjadi pribadi yang lebih baik,
+            menjadi orang yang kuatttt, menjadi orang yang terbukaaa. <br />
+            Mungkin waktu baca ini kita lagi duduk sebelahan terus ketawa tawa,
+            atau luwh baca dirumah, yang pasti sekarang aku sudah tidak magang,
+            sekarang kita bisa jajan bareng kekantin lagi, tak samper ke kelas
+            lagi, asik asikk. <br />
+            Walaupun kita banyak berantemnya, banyak ego kita, aku harap kita
+            bisa sama-sama untuk membangung hubungan kita ke arah yang lebih
+            baik ya sayangg, jangan capek capek, kalo ada masalah diantara kita
+            di omonginn, jangan malah dihindarin, okeee? <br />
+            Sekali lagi, terimakasih sudah mau menjadi pacar dari mas kuro ini,
+            aku minta maaf ya sayang, kalo selama setahun ini aku banyak bikin
+            kamu bersedih, bikin nangis, maaf kalo ego ku masih terlalu
+            tinggiii. <br />
+            Akhir kata, aku gatau sebetulnya seng mau ngasih apa, dari november
+            aku udah mikirin anjay, dan akhirnya aku melihat gelang ini karena
+            lucuu, juga aku beliin masker, aku tu lupa, luwh maskernya yang ijo
+            atau abu abuu, tapi seingetku ijo, semoga bener dan ini jedai tak
+            beliin yang katanya jedai anti badai atau apa ini, semoga nggak
+            cepet jebol yaaa. <br />
+            I LOVE YOU MORE RAFHAELA NATALIE WIDIHASPUTRI <br />
+            I LOVE YOU MORE SAYANGKU, CINTAKU, PACARKU, CEWEKU, ANAK KECILKUUUUU
+            💖
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- services -->
+    <div id="greetings" class="dark:bg-slate-900">
+      <div class="container mx-auto">
+        <!-- top -->
+        <div class="flex flex-col items-center gap-3">
+          <h1 class="font-bold text-pink-300">GREETIINGS</h1>
+          <h1 class="text-3xl dark:text-white">
+            Ucapan dari temen temen mu nihh
+          </h1>
+        </div>
+        <!-- bottom -->
+        <div class="p-5 swiper-container md:w-3/12 sm:p-0">
+          <div class="swiper-wrapper">
+            <!-- card -->
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">Keyna</h1>
+              <p class="text-gray-400">
+                hellooo ellaa, happy sweet seventeen yeahhh. cie yang habis ini
+                punya ktp, bikin sim aw lucunyaaa pacarnya mas dasi. di ulang
+                tahun yang ke 17 ini semoga panjang umur, sehat selalu, tambah
+                dewasa, berbakti sama mama papaa jangan lupaa ya. semoga hal hal
+                baik datang kepada ella & keluarga. mainn main lagi yukk, kangen
+                nih hehe. sending u lots of love and good vibes on ur special
+                day🎀🎊
+              </p>
+            </div>
+            <!-- Duplicate the above block for each card -->
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">Khayla</h1>
+              <p class="text-gray-400">
+                Aloo ellaaa, happy birthday yaaa!!! Cieee punya KTP cieee wkwk.
+                Ellaaa semoga diumur kmu sekarang panjang umurr, sehat selaluu,
+                tambahh pinterrr, tambah cantiknyaa eh sekarang ajaa udahh
+                cantikk bgtt wkwkk, citaa citaa Ella tercapaiii, pokonya sukses
+                Aamiin. Selaluu ceriaa Dann semangatt yaa kakakk backend
+                hihihihi. Lovee ellaaaa 🫶🏻🫶🏻😻😻
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">Nathan</h1>
+              <p class="text-gray-400">
+                Semoga panjang umur tambah pinter Ben ISO nyontoin teman teman
+                🥳🥳🥳. Tak tunggu Jajannya🥳🥳
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">Vino</h1>
+              <p class="text-gray-400">
+                selamat ulang tahun ell, semoga happy birthday, jas jis
+                joss👏👏🥳🎂🤙
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">Epan</h1>
+              <p class="text-gray-400">
+                Hbd bro elol, semoga langgeng trs sm moas youpe & semoga baik
+                baik orang baik, jangan lupa traktir steaknya ya bro elol
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">
+                UX / UI Design
+              </h1>
+              <p class="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">
+                UX / UI Design
+              </h1>
+              <p class="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">
+                UX / UI Design
+              </h1>
+              <p class="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">
+                UX / UI Design
+              </h1>
+              <p class="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">
+                UX / UI Design
+              </h1>
+              <p class="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+            </div>
+            <div
+              class="flex flex-col w-full gap-3 p-5 my-3 rounded-lg shadow-xl swiper-slide md:w-3/12 md:my-10"
+            >
+              <h1 class="text-lg font-medium dark:text-white">
+                UX / UI Design
+              </h1>
+              <p class="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+            </div>
+            <!-- ... repeat for other cards ... -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- works -->
+    <div id="gallery" class="py-40 dark:bg-slate-900">
+      <div class="container mx-auto">
+        <!-- top -->
+        <div class="flex flex-col items-center gap-3 mb-3">
+          <h1 class="font-bold text-pink-300">Gallery</h1>
+          <h1 class="text-3xl dark:text-white">Intinya isinya foto foto</h1>
+        </div>
+        <div class="grid">
+          <div class="grid-item"><img src="img/1.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/2.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/3.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/4.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/5.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/6.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/7.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/8.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/9.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/10.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/11.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/12.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/13.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/14.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/15.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/16.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/17.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/18.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/19.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/20.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/21.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/22.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/23.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/24.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/25.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/26.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/27.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/28.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/29.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/30.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/31.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/32.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/33.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/34.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/35.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/36.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/37.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/38.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/39.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/40.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/41.jpg" alt="" /></div>
+          <div class="grid-item"><img src="img/42.jpg" alt="" /></div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="w-full bg-gray-800">
+      <div class="container flex items-center justify-between py-5 mx-auto">
+        <span class="hidden font-medium text-white md:block"
+          >Made with ♥️ untuk pacarkuuu</span
+        >
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="./autotyping.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000, // Waktu delay dalam milidetik (3 detik)
+          disableOnInteraction: false, // Melanjutkan autoplay setelah interaksi
+        },
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const grid = document.querySelector(".grid");
+        new Masonry(grid, {
+          itemSelector: ".grid-item",
+          columnWidth: ".grid-item",
+          percentPosition: true,
+          gutter: 10, // Jarak antar elemen
+        });
+      });
+    </script>
   </body>
 </html>
